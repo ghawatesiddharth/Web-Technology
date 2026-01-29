@@ -1,0 +1,6 @@
+Implement web page index.html for any client website(eg. mobile shop website), using following:
+a)HTML syntax : heading tags,basics tags, attributes, frames, tables, images, lists, links for text and images, forms etc.
+b)Use internal,inline,external CSS
+
+Enhancements:
+use features of HTML 5 like adding mp3 vdos, images, in above web page. Also use cs according to sign of good website.
