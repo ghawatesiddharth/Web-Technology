@@ -8,7 +8,6 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     let passError = document.getElementById("passError");
     let successMsg = document.getElementById("successMsg");
 
-    // Reset messages
     userError.textContent = "";
     passError.textContent = "";
     successMsg.textContent = "";
@@ -27,13 +26,11 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
         passError.textContent = "Password must be at least 6 characters";
         isValid = false;
     }
-
-    // Dummy credentials check
     if (isValid) {
         if (username === "admin" && password === "admin123") {
             successMsg.textContent = "Login successful!";
         } else {
-            passError.textContent = "Invalid username or password";
+            passError.textContent = "Invalid username or password. Please enter valid username and password.";
         }
     }
 });
