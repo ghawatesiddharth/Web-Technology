@@ -1,0 +1,13 @@
+echo "# Web-Technology" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/ghawatesiddharth/Web-Technology.git
+git push -u origin main
+
+
+push existing files 
+git remote add origin https://github.com/ghawatesiddharth/Web-Technology.git
+git branch -M main
+git push -u origin main

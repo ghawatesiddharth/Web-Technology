@@ -22,6 +22,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     } 
     else if (!emailPattern.test(email)) {
         userError.textContent = "Enter a valid email address";
+        alert("Enter a valid email address");
         isValid = false;
     }
 
@@ -31,6 +32,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     } 
     else if (password.length < 6) {
         passError.textContent = "Password must be at least 6 characters long";
+        alert("Password must be at least 6 characters long");
         isValid = false;
     }
     if (isValid) {
