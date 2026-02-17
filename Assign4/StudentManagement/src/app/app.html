@@ -1,73 +1,9 @@
-<div class="container">
-  <h1>Student Management System</h1>
+<h1>Student Management System</h1>
 
-  <form #studentForm="ngForm" (ngSubmit)="addStudent(studentForm)">
+<nav>
+  <a routerLink="/register">Register</a>
+</nav>
 
-    <div class="form-group">
-      <label>First Name</label>
-      <input type="text" name="firstName"
-             ngModel required
-             class="form-control">
-    </div>
+<hr>
 
-    <div class="form-group">
-      <label>Last Name</label>
-      <input type="text" name="lastName"
-             ngModel required
-             class="form-control">
-    </div>
-
-    <div class="form-group">
-      <label>Email</label>
-      <input type="email" name="email"
-             ngModel required
-             class="form-control">
-    </div>
-
-    <div class="form-group">
-      <label>Course</label>
-      <input type="text" name="course"
-             ngModel required
-             class="form-control">
-    </div>
-
-    <div class="form-group">
-      <label>Year</label>
-      <select name="year" ngModel required class="form-control">
-        <option value="">Select Year</option>
-        <option>1st Year</option>
-        <option>2nd Year</option>
-        <option>3rd Year</option>
-        <option>4th Year</option>
-      </select>
-    </div>
-
-    <button type="submit" [disabled]="studentForm.invalid">
-      Add Student
-    </button>
-
-  </form>
-
-  <hr>
-
-  <h2>Student List</h2>
-
-  <table border="1" width="100%" *ngIf="students.length > 0">
-    <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Email</th>
-      <th>Course</th>
-      <th>Year</th>
-    </tr>
-
-    <tr *ngFor="let student of students">
-      <td>{{student.firstName}}</td>
-      <td>{{student.lastName}}</td>
-      <td>{{student.email}}</td>
-      <td>{{student.course}}</td>
-      <td>{{student.year}}</td>
-    </tr>
-  </table>
-
-</div>
+<router-outlet></router-outlet>
