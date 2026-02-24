@@ -1,0 +1,52 @@
+$primary-color: #6366f1;
+
+.auth-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.auth-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+
+  h2 { color: #333; margin-bottom: 1.5rem; }
+  
+  .error-text { color: #ff4d4d; font-size: 0.85rem; margin-bottom: 1rem; }
+
+  .input-group {
+    margin-bottom: 1.2rem;
+    input {
+      width: 90%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      &:focus { border-color: $primary-color; outline: none; }
+    }
+  }
+
+  .btn-primary {
+    width: 100%;
+    padding: 12px;
+    background: $primary-color;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    &:hover { background: color-mix(in srgb, $primary-color, black 15%); }
+  }
+
+  .auth-footer {
+    margin-top: 1.5rem;
+    p { font-size: 0.9rem; a { color: $primary-color; cursor: pointer; text-decoration: none; font-weight: bold; } }
+  }
+}
