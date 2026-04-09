@@ -5,35 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Bookshop</title>
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a1a2e;
+            color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .hero {
             text-align: center;
-            padding-top: 80px;
+            padding: 60px 40px;
+            background: #16213e;
+            border-radius: 12px;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.4);
+            max-width: 480px;
         }
-        h1 {
-            color: #333;
+        .hero h1 {
+            font-size: 36px;
+            color: #e94560;
+            margin-bottom: 12px;
         }
-        p {
-            color: #666;
+        .hero p {
+            color: #aaa;
             font-size: 16px;
+            margin-bottom: 30px;
         }
         .btn {
             display: inline-block;
-            margin: 10px;
-            padding: 14px 32px;
+            padding: 14px 36px;
+            background: #e94560;
             color: #fff;
             text-decoration: none;
-            font-size: 18px;
-            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: opacity 0.2s, transform 0.2s;
         }
-        .btn-view { background-color: #2196F3; }
-        .btn-view:hover { background-color: #1976D2; }
+        .btn:hover {
+            opacity: 0.88;
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
-    <h1>Welcome to E-Bookshop</h1>
-    <p>Manage your books — View, Add, Edit, and Delete.</p>
-    <a class="btn btn-view" href="books">View Books</a>
+    <div class="hero">
+        <h1>E-Bookshop</h1>
+        <p>Manage your book collection — View, Add, Edit, and Delete books.</p>
+        <a class="btn" href="books">Enter Bookshop</a>
+    </div>
 </body>
 </html>
