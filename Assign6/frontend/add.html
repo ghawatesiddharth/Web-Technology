@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Employee — EmpManager</title>
+    <meta name="description" content="Add a new employee to the Employee Management System.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-navbar sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <i class="bi bi-people-fill brand-icon"></i>
+                <span>EmpManager</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="bi bi-speedometer2 me-1"></i>Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="add.html"><i class="bi bi-person-plus me-1"></i>Add Employee</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 col-md-9">
+
+                <!-- Breadcrumb -->
+                <nav aria-label="breadcrumb" class="mb-4">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Dashboard</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Add Employee</li>
+                    </ol>
+                </nav>
+
+                <div class="card form-card">
+                    <div class="card-header form-card-header">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="form-header-icon">
+                                <i class="bi bi-person-plus-fill"></i>
+                            </div>
+                            <div>
+                                <h1 class="form-title mb-0">Add New Employee</h1>
+                                <p class="text-muted mb-0 small">Fill in the details below to register a new employee</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <form id="addEmployeeForm" novalidate>
+                            <!-- Name -->
+                            <div class="mb-4">
+                                <label for="empName" class="form-label">
+                                    <i class="bi bi-person me-1 text-primary"></i>Full Name
+                                </label>
+                                <input type="text" class="form-control form-input" id="empName" placeholder="e.g. Aarav Kumar" required>
+                                <div class="invalid-feedback">Please enter the employee's full name.</div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="mb-4">
+                                <label for="empEmail" class="form-label">
+                                    <i class="bi bi-envelope me-1 text-primary"></i>Email Address
+                                </label>
+                                <input type="email" class="form-control form-input" id="empEmail" placeholder="e.g. aarav.kumar@company.com" required>
+                                <div class="invalid-feedback">Please enter a valid email address.</div>
+                            </div>
+
+                            <!-- Position -->
+                            <div class="mb-4">
+                                <label for="empPosition" class="form-label">
+                                    <i class="bi bi-briefcase me-1 text-primary"></i>Position
+                                </label>
+                                <input type="text" class="form-control form-input" id="empPosition" placeholder="e.g. Software Engineer" required>
+                                <div class="invalid-feedback">Please enter the employee's position.</div>
+                            </div>
+
+                            <!-- Salary -->
+                            <div class="mb-4">
+                                <label for="empSalary" class="form-label">
+                                    <i class="bi bi-currency-rupee me-1 text-primary"></i>Salary (₹)
+                                </label>
+                                <input type="number" class="form-control form-input" id="empSalary" placeholder="e.g. 85000" min="0" required>
+                                <div class="invalid-feedback">Please enter a valid salary amount.</div>
+                            </div>
+
+                            <!-- Buttons -->
+                            <div class="d-flex flex-wrap gap-3 pt-2">
+                                <button type="submit" class="btn btn-add flex-grow-1" id="submitBtn">
+                                    <i class="bi bi-check-circle me-2"></i>Add Employee
+                                </button>
+                                <a href="index.html" class="btn btn-outline-secondary flex-grow-1">
+                                    <i class="bi bi-x-circle me-2"></i>Cancel
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Success Toast -->
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index:1100">
+        <div id="successToast" class="toast align-items-center text-bg-success border-0" role="alert">
+            <div class="d-flex">
+                <div class="toast-body">
+                    <i class="bi bi-check-circle-fill me-2"></i>Employee added successfully!
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2026 EmpManager. Built with <i class="bi bi-heart-fill text-danger"></i> and Bootstrap 5.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Client-side validation
+        document.getElementById('addEmployeeForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (!this.checkValidity()) {
+                e.stopPropagation();
+                this.classList.add('was-validated');
+                return;
+            }
+            // Show success toast (mock action)
+            const toast = new bootstrap.Toast(document.getElementById('successToast'));
+            toast.show();
+            this.reset();
+            this.classList.remove('was-validated');
+        });
+    </script>
+</body>
+</html>
